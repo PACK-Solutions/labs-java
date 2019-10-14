@@ -32,7 +32,7 @@ De 3 manières différents, veuillez tester que des exceptions soient levées da
 
 ## Exercice 3 - Timeout
 
-Vérifier que le test de *Exo3TimeoutTest* soit exécuté en moins de 10 secondes
+Vérifier que le test *testSlaIsRespected* de *Exo3TimeoutTest* soit exécuté en moins de 10 secondes contrairement à *testSlaIsNotRespected*.
 
 ---
 
