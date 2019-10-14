@@ -3,8 +3,10 @@ package com.ps.labs;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
+@Ignore
 public class Exo1AssertsTest {
 
     private List<String> names = new ArrayList<String>();
