@@ -22,6 +22,7 @@ public class PeopleExportService {
     private final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ISO_LOCAL_DATE;
 
     public PeopleExportService(String path) {
+        // Used by simplicity for the lab, in real needs to be replaced by an external property
         this.path = path;
     }
 
@@ -54,6 +55,7 @@ public class PeopleExportService {
         try {
             if (personFile.createNewFile()) {
                 Files.write(Paths.get(filePath), dateTimeFormatter.format(person.getBirthDate()).getBytes());
+                // Used by simplicity for the lab, in real sysout ans syserr should be replaced by logger usage (slf4j at PACK)
                 System.out.println(
                         String.format("%s %s a été exporté avec succès", person.getFirstName(), person.getLastName()));
                 return true;
@@ -61,6 +63,7 @@ public class PeopleExportService {
                 System.err.println(String.format("Erreur - %s %s a déjà été généré", person.getFirstName(), person.getLastName()));
             }
         } catch (IOException e) {
+            // Lab improvement idea : throw a Business Exception
             System.err.println(
                     String.format("Erreur - lors de la génération de %s", filePath));
         }
