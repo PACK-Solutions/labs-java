@@ -20,7 +20,7 @@ Ce lab va vous permettre de mettre en oeuvre les tests unitaires avec **JUnit 4*
 
 Réaliser les exercices de la classe de test *Exo1AssertsTest*.
 * Lancer les tests unitaires 1 par 1.
-* Lancer tous les tests via une commande `maven` (il y a un piège).
+* Lancer tous les tests via une commande `maven` (il y a 2 pièges).
 
 ---
 

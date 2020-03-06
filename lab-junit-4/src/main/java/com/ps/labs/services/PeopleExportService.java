@@ -33,6 +33,7 @@ public class PeopleExportService {
      * Main endpoint : export a collection of {@link Person}
      *
      * @param people A collection of {@link Person}
+     * @return Number of people exported successfully
      */
     public long exportPeople(final List<Person> people) {
         return people.stream()
@@ -57,14 +58,14 @@ public class PeopleExportService {
         personFile.getParentFile().mkdirs();
         try {
             if (personFile.createNewFile()) {
-                Files.write(Paths.get(filePath), DateTimeFormatter.ISO_LOCAL_DATE.format(person.getBirthDate()).getBytes());
+                Files.write(Paths.get(filePath), person.getBirthDate() == null ? "no date".getBytes() :
+                    DateTimeFormatter.ISO_LOCAL_DATE.format(person.getBirthDate()).getBytes());
                 logger.info("{} {} a été exporté avec succès", person.getFirstName(), person.getLastName());
                 return true;
             } else {
                 logger.warn("Erreur - {} {} a déjà été généré", person.getFirstName(), person.getLastName());
             }
         } catch (IOException e) {
-            // Lab improvement idea : throw a Business Exception
             logger.error("Erreur - lors de la génération de {}", filePath);
         }
         return false;
