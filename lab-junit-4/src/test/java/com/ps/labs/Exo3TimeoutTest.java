@@ -2,26 +2,36 @@ package com.ps.labs;
 
 import java.time.Duration;
 import java.time.Instant;
-import java.util.stream.LongStream;
+import java.util.concurrent.TimeUnit;
 
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class Exo3TimeoutTest {
 
+    private static final Logger logger = LoggerFactory.getLogger(Exo3TimeoutTest.class);
+
     @Test
-    public void testSlaIsRespected() {
-        Instant start = Instant.now();
-        LongStream.range(0L, 2000000000L).sum();
-        Instant end = Instant.now();
-        System.out.println("Duration: " + Duration.between(start, end).toMillis() + " ms");
+    public void testSlaIsRespected1() throws InterruptedException {
+        sleepInMillis(50);
     }
 
     @Test
-    public void testSlaIsNotRespected() {
+    public void testSlaIsRespected2() throws InterruptedException {
+        sleepInMillis(100);
+    }
+
+    @Test
+    public void testSlaIsNotRespected() throws InterruptedException {
+        sleepInMillis(200);
+    }
+
+    private void sleepInMillis(final long millis) throws InterruptedException {
         Instant start = Instant.now();
-        LongStream.range(0L, 20000000000L).sum();
+        TimeUnit.MILLISECONDS.sleep(millis);
         Instant end = Instant.now();
-        System.out.println("Duration: " + Duration.between(start, end).toMillis() + " ms");
+        logger.info("Duration: {} ms", Duration.between(start, end).toMillis());
     }
 
 }

@@ -12,16 +12,19 @@ import java.util.stream.Collectors;
 
 import com.ps.labs.dto.Person;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * Export {@link Person} into separated files
  */
 public class PeopleExportService {
 
+    private static final Logger logger = LoggerFactory.getLogger(PeopleExportService.class);
+
     private String path;
 
-    private final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ISO_LOCAL_DATE;
-
-    public PeopleExportService(String path) {
+    public PeopleExportService(final String path) {
         // Used by simplicity for the lab, in real needs to be replaced by an external property
         this.path = path;
     }
@@ -31,7 +34,7 @@ public class PeopleExportService {
      *
      * @param people A collection of {@link Person}
      */
-    public long exportPeople(List<Person> people) {
+    public long exportPeople(final List<Person> people) {
         return people.stream()
                      .filter(Objects::nonNull)
                      .map(this::exportPerson)
@@ -45,27 +48,24 @@ public class PeopleExportService {
      * @param person Can not be null
      * @return True if person is successfully exported
      */
-    private boolean exportPerson(Person person) {
-        String filename = person.getFirstName() + "_" + person.getLastName() + ".txt";
-        String filePath = path + FileSystems.getDefault().getSeparator() + filename;
-        File personFile = new File(filePath);
+    private boolean exportPerson(final Person person) {
+        final String filename = person.getFirstName() + "_" + person.getLastName() + ".txt";
+        final String filePath = path + FileSystems.getDefault().getSeparator() + filename;
+        final File personFile = new File(filePath);
 
         // We generate parent folder and its parents if they don't exist
         personFile.getParentFile().mkdirs();
         try {
             if (personFile.createNewFile()) {
-                Files.write(Paths.get(filePath), dateTimeFormatter.format(person.getBirthDate()).getBytes());
-                // Used by simplicity for the lab, in real sysout ans syserr should be replaced by logger usage (slf4j at PACK)
-                System.out.println(
-                        String.format("%s %s a été exporté avec succès", person.getFirstName(), person.getLastName()));
+                Files.write(Paths.get(filePath), DateTimeFormatter.ISO_LOCAL_DATE.format(person.getBirthDate()).getBytes());
+                logger.info("{} {} a été exporté avec succès", person.getFirstName(), person.getLastName());
                 return true;
             } else {
-                System.err.println(String.format("Erreur - %s %s a déjà été généré", person.getFirstName(), person.getLastName()));
+                logger.warn("Erreur - {} {} a déjà été généré", person.getFirstName(), person.getLastName());
             }
         } catch (IOException e) {
             // Lab improvement idea : throw a Business Exception
-            System.err.println(
-                    String.format("Erreur - lors de la génération de %s", filePath));
+            logger.error("Erreur - lors de la génération de {}", filePath);
         }
         return false;
     }

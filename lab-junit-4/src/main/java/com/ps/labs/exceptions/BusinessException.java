@@ -1,14 +1,14 @@
 package com.ps.labs.exceptions;
 
 public class BusinessException extends Exception {
- 
-    private static final long serialVersionUID = 2249567116944311341L;
 
-    public BusinessException(String message) {
+    private static final long serialVersionUID = -1521343772507290737L;
+
+    public BusinessException(final String message) {
         super(message);
     }
- 
-    public BusinessException(String message, Throwable cause) {
+
+    public BusinessException(final String message, final Throwable cause) {
         super(message, cause);
     }
 

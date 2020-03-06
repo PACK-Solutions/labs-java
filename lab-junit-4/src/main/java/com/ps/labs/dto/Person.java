@@ -15,7 +15,7 @@ public class Person implements Serializable {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
+    public void setLastName(final String lastName) {
         this.lastName = lastName;
     }
 
@@ -23,7 +23,7 @@ public class Person implements Serializable {
         return firstName;
     }
 
-    public void setFirstName(String firstName) {
+    public void setFirstName(final String firstName) {
         this.firstName = firstName;
     }
 
@@ -31,7 +31,7 @@ public class Person implements Serializable {
         return birthDate;
     }
 
-    public void setBirthDate(LocalDate birthDate) {
+    public void setBirthDate(final LocalDate birthDate) {
         this.birthDate = birthDate;
     }
 

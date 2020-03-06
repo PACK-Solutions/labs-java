@@ -38,15 +38,15 @@ public class Exo1AssertsTest {
 
     @Test
     public void testAssertArrayEquals() {
-        byte[] expected = "trial".getBytes();
-        byte[] actual = "trial".getBytes();
+        final byte[] expected = "trial".getBytes();
+        final byte[] actual = "trial".getBytes();
         // Vérifier que ces 2 tableaux de bytes soient égaux
     }
 
     @Test
     public void testAssertNotSame() {
-        Integer number1 = Integer.valueOf(768);
-        Integer number2 = Integer.valueOf(768);
+        final Integer number1 = Integer.valueOf(768);
+        final Integer number2 = Integer.valueOf(768);
         // Tester que ces 2 objets sont égaux mais ne font pas référence au même objet
         // Indice - 2 assertions sont attendues
     }
