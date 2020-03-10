@@ -4,7 +4,7 @@ Ce lab va vous permettre de mettre en œuvre les tests unitaires avec **JUnit 4*
 
 ---
 
-## Exercice 0 - Mon premier TU :
+## Exercice 0 - Mon premier TU
 
 * Créez votre première classe de test unitaire comprenant au moins 2 tests.
 * Lancez-les depuis :
@@ -16,7 +16,7 @@ Ce lab va vous permettre de mettre en œuvre les tests unitaires avec **JUnit 4*
 
 ---
 
-## Exercice 1 - Les assertions :
+## Exercice 1 - Les assertions
 
 Réaliser les exercices de la classe de test *Exo1AssertsTest*.
 * Lancer les tests unitaires 1 par 1.
@@ -24,7 +24,7 @@ Réaliser les exercices de la classe de test *Exo1AssertsTest*.
 
 ---
 
-## Exercice 2 - Tester les exceptions :
+## Exercice 2 - Tester les exceptions
 
 De 3 manières différentes, veuillez tester que des exceptions soient levées dans *Exo2ExceptionsTest*.
 
@@ -53,7 +53,7 @@ De la même façon, créer un test qui va vérifier qu'une `Person` est mineure.
 
 ---
 
-## Aller plus loin :
+## Aller plus loin
 
 * [Test runners](https://github.com/junit-team/junit4/wiki/Test-runners)
 * [Aggregating tests in suites](https://github.com/junit-team/junit4/wiki/Aggregating-tests-in-suites)

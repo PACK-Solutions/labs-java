@@ -29,7 +29,7 @@ public class Exo2CalculatorService {
 
         // Vérifier que mockService appelle dans cet ordre précis :
         //  * la méthode "add" 2 fois
-        //  * la méthode "divide" 3 fois
+        //  * la méthode "multiply" 3 fois
         //  * la méthode "add" 1 fois
         // Vérifier que la méthode "substract" n'est jamais appelé
         // Vérifier que mockService2 et mockService3 ne soient jamais utilisés
