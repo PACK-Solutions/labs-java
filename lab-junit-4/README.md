@@ -1,6 +1,6 @@
 # Labs Java - JUnit 4
 
-Ce lab va vous permettre de mettre en oeuvre les tests unitaires avec **JUnit 4** à travers une série d'exercices.
+Ce lab va vous permettre de mettre en œuvre les tests unitaires avec **JUnit 4** à travers une série d'exercices.
 
 ---
 
