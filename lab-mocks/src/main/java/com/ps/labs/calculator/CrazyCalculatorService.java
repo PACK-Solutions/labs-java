@@ -6,9 +6,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class CrazyCalculatorService {
 
-    private CalculatorService service;
+    private final CalculatorService service;
 
-    private MailService mailService;
+    private final MailService mailService;
 
     @Autowired
     public CrazyCalculatorService(final CalculatorService service, final MailService mailService) {

@@ -10,8 +10,4 @@ public class CalculatorService {
         return first - second;
     }
 
-    public int multiply(final int first, final int second) {
-        return first + second;
-    }
-
 }
