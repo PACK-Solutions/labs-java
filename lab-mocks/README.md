@@ -1,4 +1,4 @@
-# Labs Java - JUnit 4
+# Labs Java - Mocks
 
 Ce lab va vous permettre d'appréhender les mocks via **Mockito 1** et **Spring**, lors de vos tests unitaires **JUnit 4** à travers une série d'exercices.
 
