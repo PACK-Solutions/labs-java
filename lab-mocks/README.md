@@ -54,7 +54,7 @@ Créez 3 classes de tests différentes pour tester la classe d'injection de prop
 
 ---
 
-## Exercice 6 - Spring - Mock REST / ArgumentCaptor (@Captor)
+## Exercice 6 - Spring - Mock REST
 
 Testez de la manière la plus proche de la réalité, les endpoints REST de la classe `PersonController`.
 
